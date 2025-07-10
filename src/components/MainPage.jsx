@@ -1,10 +1,26 @@
 import React from 'react';
+import { useState } from 'react';
 import Image1 from '../assets/ProfileImage.jpeg'
 import Image2 from '../assets/ProfileImage2.jpg'
 import { VscVscode } from "react-icons/vsc";
 import TechTags from './TechTags';
+import MaleFashionPP from '../assets/MaleFashionPP.png'
+import { FaEye, FaPlay } from 'react-icons/fa';
+import ProjectModal from './ProjectModal';
 
 function MainPage() {
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const projectData = {
+    image: MaleFashionPP,
+    title: 'Male fashion Website',
+    description:
+      'This is a Kanban-based task management system, developed with React, TypeScript, and TailwindCSS. The project offers an intuitive interface to organize tasks in three states: To Do, In Progress, and Completed.',
+    tech: ['Vite', 'React', 'TypeScript', 'TailwindCSS', 'Zustand'],
+    demoLink: 'https://male-fashion-shop.netlify.app/', 
+  };
+
   return (
     <div className="min-h-screen text-white font-mono">
       <div>
@@ -159,7 +175,7 @@ function MainPage() {
               {/* Section 4 - Tools and skills */}
 
               {/* Tools */}
-        <section className='bg-[linear-gradient(to_bottom,_#04032b_0%,_#04032b_95%,_#04032b_100%)] pb-15'>
+        <section className='bg-[linear-gradient(to_bottom,_#04032b_0%,_#04032b_95%,_#04032b_100%)] lg:pb-25'>
 
           <div className='mb-10'>
               <p className='text-3xl font-semibold tracking-wide flex space-x-4 justify-center items-center'>
@@ -217,8 +233,67 @@ function MainPage() {
         </section>
 
         {/* Skills */}
-              <section className=' bg-[linear-gradient(to_bottom,_#04032b_0%,_#04032b_35%,_black_100%)]'>
+              <section className=' bg-[linear-gradient(to_bottom,_#04032b_0%,_#04032b_35%,_black_100%)] pb-30'>
                 <TechTags/>
+              </section>
+
+
+
+
+              {/* Portfolio */}
+              <section className='bg-[linear-gradient(to_bottom,_black_0%,_black_55%,_black_100%)]'>
+
+                      <div className="min-h-screen bg-bla">
+
+                               {/* Card */}
+                    <div className="max-w-xl md:max-w-md mx-auto bg-[#1e1e1e] rounded-xl overflow-hidden shadow-lg p-4 transition-transform duration-300 transform hover:scale-105">
+                      {/* Image */}
+                      <div className="overflow-hidden rounded-lg">
+                        <img
+                          src={projectData.image}
+                          alt="Project"
+                          className="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110"
+                        />
+                      </div>
+
+        {/* Title */}
+                  <h2 className="text-2xl mt-6 mb-4 font-semibold bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent">
+                    {projectData.title}
+                  </h2>
+
+                  {/* Buttons */}
+                  <div className=" gap-4 mt-4">
+                    <a
+                      href={projectData.demoLink}
+                      target="_blank"
+                      className="flex items-center justify-center w-fit gap-2 px-4 py-2  rounded bg-green-600 text-white font-semibold hover:bg-green-700 transition mb-2"
+                    >
+                      <FaPlay />
+                      Demo
+                    </a>
+
+                        <button
+                          onClick={() => setModalOpen(true)}
+                          className="flex items-center justify-center gap-2 px-4 py-2 md:py-0 rounded bg-blue-700 text-white font-semibold hover:bg-blue-800 transition"
+                        >
+                          <FaEye />
+                          View More
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Modal */}
+                    <ProjectModal
+                      isOpen={isModalOpen}
+                      onClose={() => setModalOpen(false)}
+                      image={projectData.image}
+                      title={projectData.title}
+                      description={projectData.description}
+                      tech={projectData.tech}
+                      demoLink={projectData.demoLink}
+                    />
+                  </div>
+
               </section>
         
       </div>

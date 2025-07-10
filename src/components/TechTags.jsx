@@ -6,43 +6,43 @@ import {
   SiMongodb, SiExpress, SiMysql, SiTailwindcss, SiVite,
   SiNextdotjs, SiFirebase, SiDotnet,
 } from 'react-icons/si';
-import { PiFileCSharpFill } from "react-icons/pi";
+import { PiFileCSharpBold } from "react-icons/pi";
 import { TbBrandXamarin } from "react-icons/tb";
 
 // Updated tag data with icons
 const tagData = {
   'Front-end': [
-    { name: 'HTML5', icon: <FaHtml5 /> },
-    { name: 'React', icon: <FaReact /> },
-    { name: 'CSS', icon: <FaCss3Alt /> },
-    { name: 'JavaScript', icon: <FaReact /> }, // Substitute with appropriate JS icon if desired
-    { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
-    { name: 'Vite', icon: <SiVite /> },
-    { name: 'Next.js', icon: <SiNextdotjs /> },
+    { name: 'HTML5', icon: <FaHtml5 />, level: 80 },
+    { name: 'React', icon: <FaReact />, level: 85 },
+    { name: 'CSS', icon: <FaCss3Alt />, level: 80 },
+    { name: 'JavaScript', icon: <FaReact />, level: 88 },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss />, level: 80 },
+    { name: 'Vite', icon: <SiVite />, level: 70 },
+    { name: 'Next.js', icon: <SiNextdotjs />, level: 75 },
   ],
   'Back-end': [
-    { name: 'Node.js', icon: <FaNodeJs /> },
-    { name: 'Express', icon: <SiExpress /> },
-    { name: 'MySQL', icon: <SiMysql /> },
-    { name: 'MongoDB', icon: <SiMongodb /> },
-    { name: 'Firebase', icon: <SiFirebase /> },
+    { name: 'Node.js', icon: <FaNodeJs />, level: 75 },
+    { name: 'Express', icon: <SiExpress />, level: 75 },
+    { name: 'MySQL', icon: <SiMysql />, level: 60 },
+    { name: 'MongoDB', icon: <SiMongodb />, level: 65 },
+    { name: 'Firebase', icon: <SiFirebase />, level: 70 },
   ],
   'Web Development': [
-    { name: 'HTML5', icon: <FaHtml5 /> },
-    { name: 'React', icon: <FaReact /> },
-    { name: 'CSS', icon: <FaCss3Alt /> },
-    { name: 'JavaScript', icon: <FaReact /> },
-    { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
-    { name: 'Next.js', icon: <SiNextdotjs /> },
-    { name: 'MongoDB', icon: <SiMongodb /> },
-    { name: 'Firebase', icon: <SiFirebase /> },
+    { name: 'HTML5', icon: <FaHtml5 />, level: 90 },
+    { name: 'React', icon: <FaReact />, level: 85 },
+    { name: 'CSS', icon: <FaCss3Alt />, level: 80 },
+    { name: 'JavaScript', icon: <FaReact />, level: 88 },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss />, level: 80 },
+    { name: 'Next.js', icon: <SiNextdotjs />, level: 75 },
+    { name: 'MongoDB', icon: <SiMongodb />, level: 65 },
+    { name: 'Firebase', icon: <SiFirebase />, level: 70 },
   ],
   'Software Development': [
-    { name: 'Python', icon: <FaPython /> },
-    { name: '.Net Framework', icon: <SiDotnet /> },
-    { name: 'WPF', icon: <SiDotnet /> },
-    { name: 'C#', icon: <PiFileCSharpFill /> },
-    { name: 'Xaml (Xamarin)', icon: <TbBrandXamarin /> },
+    { name: 'Python', icon: <FaPython />, level: 75 },
+    { name: '.Net Framework', icon: <SiDotnet />, level: 65 },
+    { name: 'WPF', icon: <SiDotnet />, level: 60 },
+    { name: 'C#', icon: <PiFileCSharpBold />, level: 70 },
+    { name: 'Xaml (Xamarin)', icon: <TbBrandXamarin />, level: 60 },
   ],
 };
 
@@ -81,10 +81,24 @@ const TechTags = () => {
         {tagData[selectedTag].map((item, index) => (
           <div
             key={index}
-            className="flex items-center gap-4 bg-[#12152b] rounded-lg shadow-md py-12 pl-6 transition-all duration-300 text-white"
+            className="bg-[#12152b] rounded-lg shadow-md px-6 py-8 transition-all duration-300 text-white"
           >
-            <div className="text-3xl text-[#a855f7]">{item.icon}</div>
-            <span className="text-lg font-medium">{item.name}</span>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="text-3xl text-[#a855f7]">{item.icon}</div>
+              <span className="text-lg font-medium">{item.name}</span>
+            </div>
+
+            {/* Progress bar */}
+            <div className="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-[#5667f6] to-[#7634aa] rounded-full transition-all duration-1000 ease-in-out"
+                style={{ width: `${item.level}%` }}
+              />
+            </div>
+
+            <div className="text-right text-sm text-purple-400 mt-1">
+              {item.level}%
+            </div>
           </div>
         ))}
       </div>
