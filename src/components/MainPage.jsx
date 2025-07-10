@@ -2,6 +2,7 @@ import React from 'react';
 import Image1 from '../assets/ProfileImage.jpeg'
 import Image2 from '../assets/ProfileImage2.jpg'
 import { VscVscode } from "react-icons/vsc";
+import TechTags from './TechTags';
 
 function MainPage() {
   return (
@@ -156,7 +157,9 @@ function MainPage() {
 
 
               {/* Section 4 - Tools and skills */}
-        <section className='bg-[linear-gradient(to_bottom,_#04032b_0%,_#04032b_75%,_black_100%)] pb-15'>
+
+              {/* Tools */}
+        <section className='bg-[linear-gradient(to_bottom,_#04032b_0%,_#04032b_95%,_#04032b_100%)] pb-15'>
 
           <div className='mb-10'>
               <p className='text-3xl font-semibold tracking-wide flex space-x-4 justify-center items-center'>
@@ -210,14 +213,13 @@ function MainPage() {
 
               <div className=' w-[250px] h-[140px]'>  
               </div>
-
-              
-
-              
-
           </div>
-
         </section>
+
+        {/* Skills */}
+              <section className=' bg-[linear-gradient(to_bottom,_#04032b_0%,_#04032b_35%,_black_100%)]'>
+                <TechTags/>
+              </section>
         
       </div>
     </div>
