@@ -4,22 +4,15 @@ import Image1 from '../assets/ProfileImage.jpeg'
 import Image2 from '../assets/ProfileImage2.jpg'
 import { VscVscode } from "react-icons/vsc";
 import TechTags from './TechTags';
-import MaleFashionPP from '../assets/MaleFashionPP.png'
 import { FaEye, FaPlay } from 'react-icons/fa';
 import ProjectModal from './ProjectModal';
+import projectData from '../data/projectData';
 
 function MainPage() {
 
   const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
-  const projectData = {
-    image: MaleFashionPP,
-    title: 'Male fashion Website',
-    description:
-      'This is a Kanban-based task management system, developed with React, TypeScript, and TailwindCSS. The project offers an intuitive interface to organize tasks in three states: To Do, In Progress, and Completed.',
-    tech: ['Vite', 'React', 'TypeScript', 'TailwindCSS', 'Zustand'],
-    demoLink: 'https://male-fashion-shop.netlify.app/', 
-  };
 
   return (
     <div className="min-h-screen text-white font-mono">
@@ -241,60 +234,157 @@ function MainPage() {
 
 
               {/* Portfolio */}
-              <section className='bg-[linear-gradient(to_bottom,_black_0%,_black_55%,_black_100%)]'>
+              <section className='bg-[linear-gradient(to_bottom,_black_0%,_black_90%,_#04032b_100%)] pb-20'>
 
-                      <div className="min-h-screen bg-bla">
+                        <h1 className='bg-gradient-to-r from-[#5667f6] to-[#c952ff] bg-clip-text text-transparent font-semibold text-4xl text-center mb-10'>
+                          My Portfolio
+                          </h1>
 
                                {/* Card */}
-                    <div className="max-w-xl md:max-w-md mx-auto bg-[#1e1e1e] rounded-xl overflow-hidden shadow-lg p-4 transition-transform duration-300 transform hover:scale-105">
-                      {/* Image */}
-                      <div className="overflow-hidden rounded-lg">
-                        <img
-                          src={projectData.image}
-                          alt="Project"
-                          className="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110"
-                        />
-                      </div>
+                    <div className="p-4 ">
 
-        {/* Title */}
-                  <h2 className="text-2xl mt-6 mb-4 font-semibold bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent">
-                    {projectData.title}
-                  </h2>
+                      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 px-4">
+        {projectData.map((project, index) => (
+          <div
+            key={index}
+            className="bg-[#1e1e1e] rounded-xl overflow-hidden shadow-lg p-4 transition-transform duration-300 transform hover:scale-105"
+          >
+            <div className="overflow-hidden rounded-lg">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110"
+              />
+            </div>
 
-                  {/* Buttons */}
-                  <div className=" gap-4 mt-4">
-                    <a
-                      href={projectData.demoLink}
-                      target="_blank"
-                      className="flex items-center justify-center w-fit gap-2 px-4 py-2  rounded bg-green-600 text-white font-semibold hover:bg-green-700 transition mb-2"
-                    >
-                      <FaPlay />
-                      Demo
-                    </a>
+            <h2 className="text-2xl mt-6 mb-4 font-semibold bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent">
+              {project.title}
+            </h2>
 
-                        <button
-                          onClick={() => setModalOpen(true)}
-                          className="flex items-center justify-center gap-2 px-4 py-2 md:py-0 rounded bg-blue-700 text-white font-semibold hover:bg-blue-800 transition"
-                        >
-                          <FaEye />
-                          View More
-                        </button>
-                      </div>
+            <div className="flex gap-3">
+              <a
+                href={project.demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded bg-green-600 text-white font-semibold hover:bg-green-700 transition"
+              >
+                <FaPlay />
+                Demo
+              </a>
+              <button
+                onClick={() => {
+                  setSelectedProject(project);
+                  setModalOpen(true);
+                }}
+                className="flex items-center gap-2 px-4 py-2 rounded bg-blue-700 text-white font-semibold hover:bg-blue-800 transition"
+              >
+                <FaEye />
+                View More
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+                    </div>
+
+                    <div className='w-fit mx-auto my-10 bg-gradient-to-r from-[#5667f6] to-[#7634aa] text-white border border-white py-2 px-4 rounded-lg text-lg transition-transform duration-300 transform hover:scale-110 border-none cursor-pointer'>
+                      <button onClick={() => window.open("https://github.com/TARIQQ-coder?tab=repositories", "_blank")} className='cursor-pointer'>
+                        View More Projects
+                      </button>
                     </div>
 
                     {/* Modal */}
-                    <ProjectModal
-                      isOpen={isModalOpen}
-                      onClose={() => setModalOpen(false)}
-                      image={projectData.image}
-                      title={projectData.title}
-                      description={projectData.description}
-                      tech={projectData.tech}
-                      demoLink={projectData.demoLink}
-                    />
-                  </div>
+                    {selectedProject && (
+                      <ProjectModal
+                        isOpen={isModalOpen}
+                        onClose={() => setModalOpen(false)}
+                        image={selectedProject.image}
+                        title={selectedProject.title}
+                        description={selectedProject.description}
+                        tech={selectedProject.tech}
+                        demoLink={selectedProject.demoLink}
+                      />
+                    )}
+                  
 
               </section>
+
+
+              {/* Happy clients  */}
+
+              <section className='bg-[linear-gradient(to_bottom,_#04032b_0%,_#04032b_95%,_#04032b_100%)] py-35'>
+
+                <div className='relative bg-white/10 backdrop-blur-md   p-6 shadow-lg'>
+
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-6'>
+
+                    <div className='text-center mb-8'>
+                      <span className='text-4xl font-semibold'>75</span>
+                      <p className='bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent text-xl font-semibold'>Successful Projects</p>
+                    </div>
+
+                    <div className='text-center mb-8'>
+                      <span className='text-4xl font-semibold'>75</span>
+                      <p className='bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent text-xl font-semibold'>Successful Projects</p>
+                    </div>
+
+                    <div className='text-center mb-8'>
+                      <span className='text-4xl font-semibold'>75</span>
+                      <p className='bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent text-xl font-semibold'>Successful Projects</p>
+                    </div>
+
+                    <div className='text-center mb-8'>
+                      <span className='text-4xl font-semibold'>75</span>
+                      <p className='bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent text-xl font-semibold'>Successful Projects</p>
+                    </div>
+                </div>
+                </div>
+
+              </section>
+
+
+              {/* Future Projects */}
+              <section className='bg-[linear-gradient(to_bottom,_#04032b_0%,_black_75%,_black_100%)] pb-20'>
+                <div className='px-8 grid grid-cols-1 gap-y-10'>
+                        <div className=' bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 shadow-lg hover:bg-white/20 transition-transform duration-300 transform hover:scale-105 border-none'>
+                          <p className='text-2xl bg-gradient-to-r from-[#5667f6] to-[#a647ee] bg-clip-text text-transparent font-semibold mb-4'>Did you know that a website's performance can be the difference between gaining or losing a client?</p>
+
+                          <span className='text-lg'>Behind every fast load time and smooth experience, there is a strategic optimization effort. In my new article, 'Behind the Code: How to Optimize Website and Application Performance,' I reveal the best practices for creating agile and efficient platforms.</span>
+
+                          <div className='w-fit bg-gradient-to-r from-[#5667f6] to-[#7634aa] text-white border border-white py-2 px-4 rounded-lg  border-none cursor-pointer tracking-wide mt-4'>
+                          <button className='cursor-pointer'>
+                            Learn More
+                          </button>
+                        </div>
+                    </div>
+
+                    <div className=' bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 shadow-lg hover:bg-white/20 transition-transform duration-300 transform hover:scale-105 border-none'>
+                          <p className='text-2xl bg-gradient-to-r from-[#5667f6] to-[#a647ee] bg-clip-text text-transparent font-semibold mb-4'>Did you know that a website's performance can be the difference between gaining or losing a client?</p>
+
+                          <span className='text-lg'>Behind every fast load time and smooth experience, there is a strategic optimization effort. In my new article, 'Behind the Code: How to Optimize Website and Application Performance,' I reveal the best practices for creating agile and efficient platforms.</span>
+
+                          <div className='w-fit bg-gradient-to-r from-[#5667f6] to-[#7634aa] text-white border border-white py-2 px-4 rounded-lg  border-none cursor-pointer tracking-wide mt-4'>
+                          <button className='cursor-pointer'>
+                            Learn More
+                          </button>
+                        </div>
+                    </div>
+
+                    <div className=' bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 shadow-lg hover:bg-white/20 transition-transform duration-300 transform hover:scale-105 border-none'>
+                          <p className='text-2xl bg-gradient-to-r from-[#5667f6] to-[#a647ee] bg-clip-text text-transparent font-semibold mb-4'>Did you know that a website's performance can be the difference between gaining or losing a client?</p>
+
+                          <span className='text-lg'>Behind every fast load time and smooth experience, there is a strategic optimization effort. In my new article, 'Behind the Code: How to Optimize Website and Application Performance,' I reveal the best practices for creating agile and efficient platforms.</span>
+
+                          <div className='w-fit bg-gradient-to-r from-[#5667f6] to-[#7634aa] text-white border border-white py-2 px-4 rounded-lg  border-none cursor-pointer tracking-wide mt-4'>
+                          <button className='cursor-pointer'>
+                            Learn More
+                          </button>
+                        </div>
+                    </div>
+                </div>
+              </section>
+
+              {/* socials */}
         
       </div>
     </div>
