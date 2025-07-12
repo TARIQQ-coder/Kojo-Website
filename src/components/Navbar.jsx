@@ -3,6 +3,7 @@ import { Home, User, Package, Mail, Globe, Menu, X } from 'lucide-react';
 import { FaCodeBranch,FaHome,FaUser } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { MdOutlinePostAdd } from "react-icons/md";
+import { LuBicepsFlexed } from "react-icons/lu";
 
 
 const Navbar = () => {
@@ -21,18 +22,15 @@ const Navbar = () => {
           <a href="#about" className="text-[#A084CA]  flex items-center hover:bg-[#535379] hover:text-white p-2 rounded ">
             <FaUser className="mr-1" /> About
           </a>
+            <a href="#skills" className="text-[#A084CA] hover:bg-[#535379] hover:text-white p-2 rounded  flex items-center">
+              <LuBicepsFlexed className="mr-1" /> Skills
+            </a>
           <a href="#projects" className="text-[#A084CA] hover:bg-[#535379] hover:text-white p-2 rounded  flex items-center">
             <FaCodeBranch className="mr-1" /> Projects
           </a>
           <a href="#contact" className="text-[#A084CA] hover:bg-[#535379] hover:text-white p-2 rounded  flex items-center">
             <IoMail className="mr-1" /> Contact
           </a>
-          <div className="relative group">
-            <a href="#language" className="text-[#A084CA] hover:bg-[#535379] hover:text-white p-2 rounded  flex items-center">
-              <MdOutlinePostAdd className="mr-1" /> Blog
-            </a>
-            {/* Placeholder for dropdown */}
-          </div>
         </div>
         <button
           className="md:hidden text-white"
@@ -49,14 +47,14 @@ const Navbar = () => {
           <a href="#about" className="text-[#A084CA] hover:bg-[#535379] hover:text-white p-2 rounded w-fit flex items-center">
             <FaUser className="mr-1" /> About
           </a>
+          <a href="#skills" className="text-[#A084CA] hover:bg-[#535379] hover:text-white p-2 rounded w-fit flex items-center">
+            <LuBicepsFlexed className="mr-1" /> Skills
+          </a>
           <a href="#projects" className="text-[#A084CA] hover:bg-[#535379] hover:text-white p-2 rounded w-fit flex items-center">
             <FaCodeBranch className="mr-1" /> Projects
           </a>
           <a href="#contact" className="text-[#A084CA] hover:bg-[#535379] hover:text-white p-2 rounded w-fit flex items-center">
             <IoMail className="mr-1" /> Contact
-          </a>
-          <a href="#language" className="text-[#A084CA] hover:bg-[#535379] hover:text-white p-2 rounded w-fit flex items-center">
-            <MdOutlinePostAdd className="mr-1" /> Blog
           </a>
         </div>
       )}

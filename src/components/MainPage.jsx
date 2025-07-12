@@ -4,9 +4,12 @@ import Image1 from '../assets/ProfileImage.jpeg'
 import Image2 from '../assets/ProfileImage2.jpg'
 import { VscVscode } from "react-icons/vsc";
 import TechTags from './TechTags';
-import { FaEye, FaPlay } from 'react-icons/fa';
+import { FaEye, FaPlay,FaYoutube,FaInstagram,FaGithub,FaLinkedinIn,FaWhatsapp } from 'react-icons/fa';
+import { CiYoutube } from "react-icons/ci";
+import { FaXTwitter } from "react-icons/fa6";
 import ProjectModal from './ProjectModal';
 import projectData from '../data/projectData';
+import { Typewriter } from 'react-simple-typewriter';
 
 function MainPage() {
 
@@ -15,38 +18,60 @@ function MainPage() {
 
 
   return (
-    <div className="min-h-screen text-white font-mono">
+    <div className="min-h-screen text-white font-mono scroll-smooth">
       <div>
         {/* Section1 - Home*/}
         
-        <section className='flex justify-center h-screen items-center  bg-[linear-gradient(to_bottom,_#010634_0%,_#010634_75%,_black_100%)]'>
-          <div className=' text-2xl md:text-4xl'>
+        <section id='home' className="flex justify-center items-center h-screen bg-gradient-to-b from-[#010634] via-[#010634] to-black">
+      <div className="text-2xl md:text-4xl text-center">
+        {/* Stabilized h2 with fixed height container */}
+        <div className="h-16 overflow-hidden mb-6">
+          <h2 className="tracking-wide text-white">
+            Hey, I am{' '}
+            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent inline-block">
+              <Typewriter
+                words={['Web Developer', 'Frontend Engineer', 'React Enthusiast']}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={100}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
+          </h2>
+        </div>
 
-            <h2 className='tracking-wide '>Hey, I am Software developer</h2>
+        {/* Stable h1 */}
+        <h1 className="text-3xl font-bold my-6 tracking-wide flex justify-center space-x-4">
+          <span className="text-white">Building</span>
+          <span className="text-white">your</span>
+          <span className="text-white">dream</span>
+        </h1>
 
-            <h1 className='text-3xl font-bold my-6 tracking-wide flex space-x-4 ml-6 md:ml-32'>
-              <span>Building</span>
-              <span>your</span>
-              <span>dream</span>
-            </h1>
+        {/* Stable p with gradient text */}
+        <p className="text-3xl font-semibold tracking-wide flex justify-center space-x-4">
+          <span className="bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent">
+            pixel
+          </span>
+          <span className="text-white font-bold">by</span>
+          <span className="bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent">
+            pixel
+          </span>
+        </p>
 
-              <p className='text-3xl font-semibold tracking-wide flex space-x-4 justify-center'>
-                <span className=' bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent'>pixel</span>
-              <span className='font-bold'>by</span>
-              <span className='bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent'>pixel</span>
-                </p>
-
-                <div className='w-fit py-2 px-4 bg-white/20 rounded-lg mx-auto mt-6 text-lg font-semibold hover:bg-white/40 
-                transition-all duration-300 transform hover:-translate-y-2'>
-
-                <button>Read More</button>
-                </div>
-          </div>
-        </section>
+        {/* Button with glass effect */}
+        <div className="w-fit py-2 px-4 bg-white/20 rounded-lg mx-auto mt-6 text-lg font-semibold text-white hover:bg-white/40 transition-all duration-300 transform hover:-translate-y-2">
+        <a href="#about">
+          <button>Read More</button>
+        </a>
+        </div>
+      </div>
+    </section>
 
         {/* Section 2 - About */}
 
-        <section className=' bg-[linear-gradient(to_bottom,_black_0%,_black_55%,_#060022_100%)]'>
+        <section id='about' className=' bg-[linear-gradient(to_bottom,_black_0%,_black_55%,_#060022_100%)]'>
               <h1 className='text-center text-3xl'>Why hire me for your <span className='bg-gradient-to-r from-violet-900 to-violet-400 bg-clip-text text-transparent font-semibold'>next project?</span></h1>
 
               <div className='md:grid grid-cols-2 py-20'>
@@ -65,10 +90,14 @@ function MainPage() {
                     <p className='text-center text-xl mb-4 font-light'>I am a professional with a degree in computer science, with more than two years of experience, including 1 year of experience working as a software developer and 2 years as a freelancer.</p>
 
                     <div className=' flex justify-center'>
-                      <button className='py-2 px-4 bg-white/20 hover:bg-white/40 rounded-lg  mt-6 
-                      transition-all duration-300 transform hover:-translate-y-2'>Portfolio</button>
+                      <a href="#projects">
+                        <button className='py-2 px-4 bg-white/20 hover:bg-white/40 rounded-lg  mt-6 
+                        transition-all duration-300 transform hover:-translate-y-2'>Portfolio</button>
+                      </a>
+                      <a href="/Nilla's Playground proposal.pdf" download>
                       <button className='py-2 px-4 bg-white/20 hover:bg-white/40 rounded-lg mt-6 
                       transition-all duration-300 transform hover:-translate-y-2 ml-2 '>Download CV</button>
+                      </a>
                     </div>
                   </div>
 
@@ -168,7 +197,7 @@ function MainPage() {
               {/* Section 4 - Tools and skills */}
 
               {/* Tools */}
-        <section className='bg-[linear-gradient(to_bottom,_#04032b_0%,_#04032b_95%,_#04032b_100%)] lg:pb-25'>
+        <section className='bg-[linear-gradient(to_bottom,_#04032b_0%,_#04032b_95%,_#04032b_100%)] '>
 
           <div className='mb-10'>
               <p className='text-3xl font-semibold tracking-wide flex space-x-4 justify-center items-center'>
@@ -178,7 +207,7 @@ function MainPage() {
                 </p>
           </div>
 
-          <div className=' flex flex-wrap gap-y-4 px-20 md:px-35'>
+          <div className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-18 md:px-26'>
               <div className='bg-[#38334e]/40 w-[250px] h-[140px] rounded-md mx-auto py-6 flex flex-col items-center gap-2'>
                   <div>
                     <VscVscode className='w-16 h-14 text-[#9352ff]'/>
@@ -214,19 +243,12 @@ function MainPage() {
                     <p className='text-[#d2cce9] text-lg'>Visual Studio Code</p>
               </div>
 
-              <div className=' w-[250px] h-[140px]'>  
-              </div>
-
-              <div className=' w-[250px] h-[140px]'>  
-              </div>
-
-              <div className=' w-[250px] h-[140px]'>  
-              </div>
+              
           </div>
         </section>
 
         {/* Skills */}
-              <section className=' bg-[linear-gradient(to_bottom,_#04032b_0%,_#04032b_35%,_black_100%)] pb-30'>
+              <section id='skills' className=' bg-[linear-gradient(to_bottom,_#04032b_0%,_#04032b_35%,_black_100%)] pb-30'>
                 <TechTags/>
               </section>
 
@@ -234,9 +256,9 @@ function MainPage() {
 
 
               {/* Portfolio */}
-              <section className='bg-[linear-gradient(to_bottom,_black_0%,_black_90%,_#04032b_100%)] pb-20'>
+              <section id='projects' className='bg-[linear-gradient(to_bottom,_black_0%,_black_90%,_#04032b_100%)] pb-20'>
 
-                        <h1 className='bg-gradient-to-r from-[#5667f6] to-[#c952ff] bg-clip-text text-transparent font-semibold text-4xl text-center mb-10'>
+                        <h1 className='bg-gradient-to-r from-[#5667f6] to-[#c952ff] bg-clip-text text-transparent font-semibold text-4xl text-center mb-8 pt-20'>
                           My Portfolio
                           </h1>
 
@@ -345,38 +367,43 @@ function MainPage() {
 
               {/* Future Projects */}
               <section className='bg-[linear-gradient(to_bottom,_#04032b_0%,_black_75%,_black_100%)] pb-20'>
+
+                      <h1 className='bg-gradient-to-r from-[#5667f6] to-[#c952ff] bg-clip-text text-transparent font-semibold text-4xl text-center mb-8 pt-20'>
+                        Future Projects
+                        </h1>
+
                 <div className='px-8 grid grid-cols-1 gap-y-10'>
                         <div className=' bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 shadow-lg hover:bg-white/20 transition-transform duration-300 transform hover:scale-105 border-none'>
                           <p className='text-2xl bg-gradient-to-r from-[#5667f6] to-[#a647ee] bg-clip-text text-transparent font-semibold mb-4'>Did you know that a website's performance can be the difference between gaining or losing a client?</p>
 
-                          <span className='text-lg'>Behind every fast load time and smooth experience, there is a strategic optimization effort. In my new article, 'Behind the Code: How to Optimize Website and Application Performance,' I reveal the best practices for creating agile and efficient platforms.</span>
+                          <span className='text-lg'>In today's digital-first world, your website is often the first (and sometimes only) impression you get to make. Whether you're a developer, designer, business owner, or marketer, website performance is not just a technical detail—it's a strategic asset that can directly influence whether you win or lose a potential client.</span>
 
                           <div className='w-fit bg-gradient-to-r from-[#5667f6] to-[#7634aa] text-white border border-white py-2 px-4 rounded-lg  border-none cursor-pointer tracking-wide mt-4'>
-                          <button className='cursor-pointer'>
+                          <button onClick={() => window.open("https://www.linkedin.com/pulse/website-performance-difference-between-gaining-losing-kojo-amfo-baah-necye/", "_blank")} className='cursor-pointer'>
                             Learn More
                           </button>
                         </div>
                     </div>
 
                     <div className=' bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 shadow-lg hover:bg-white/20 transition-transform duration-300 transform hover:scale-105 border-none'>
-                          <p className='text-2xl bg-gradient-to-r from-[#5667f6] to-[#a647ee] bg-clip-text text-transparent font-semibold mb-4'>Did you know that a website's performance can be the difference between gaining or losing a client?</p>
+                          <p className='text-2xl bg-gradient-to-r from-[#5667f6] to-[#a647ee] bg-clip-text text-transparent font-semibold mb-4'>The Importance of Versioning Your Code: A Practical Guide to Git and GitHub</p>
 
-                          <span className='text-lg'>Behind every fast load time and smooth experience, there is a strategic optimization effort. In my new article, 'Behind the Code: How to Optimize Website and Application Performance,' I reveal the best practices for creating agile and efficient platforms.</span>
+                          <span className='text-lg'>In the fast-evolving world of software development, writing good code is only part of the equation. Equally important is how you manage and track that code over time. Whether you're working solo or in a team, version control is the safety net that protects your project's integrity and your sanity.</span>
 
                           <div className='w-fit bg-gradient-to-r from-[#5667f6] to-[#7634aa] text-white border border-white py-2 px-4 rounded-lg  border-none cursor-pointer tracking-wide mt-4'>
-                          <button className='cursor-pointer'>
+                          <button onClick={() => window.open("https://www.linkedin.com/pulse/importance-versioning-your-code-practical-guide-git-github-amfo-baah-ptjoe/", "_blank")} className='cursor-pointer'>
                             Learn More
                           </button>
                         </div>
                     </div>
 
                     <div className=' bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 shadow-lg hover:bg-white/20 transition-transform duration-300 transform hover:scale-105 border-none'>
-                          <p className='text-2xl bg-gradient-to-r from-[#5667f6] to-[#a647ee] bg-clip-text text-transparent font-semibold mb-4'>Did you know that a website's performance can be the difference between gaining or losing a client?</p>
+                          <p className='text-2xl bg-gradient-to-r from-[#5667f6] to-[#a647ee] bg-clip-text text-transparent font-semibold mb-4'>The Benefits of AI for Developers — And Why You Shouldn't Rely on It Entirely</p>
 
-                          <span className='text-lg'>Behind every fast load time and smooth experience, there is a strategic optimization effort. In my new article, 'Behind the Code: How to Optimize Website and Application Performance,' I reveal the best practices for creating agile and efficient platforms.</span>
+                          <span className='text-lg'>Artificial Intelligence has rapidly become a vital tool in the software development process. From autocomplete suggestions to full-blown code generation, AI is helping developers write better code, faster. It's transforming the way we build, debug, and deploy software — and it's not slowing down anytime soon.</span>
 
                           <div className='w-fit bg-gradient-to-r from-[#5667f6] to-[#7634aa] text-white border border-white py-2 px-4 rounded-lg  border-none cursor-pointer tracking-wide mt-4'>
-                          <button className='cursor-pointer'>
+                          <button onClick={() => window.open("https://www.linkedin.com/pulse/benefits-ai-developers-why-you-shouldnt-rely-entirely-kojo-amfo-baah-wb2xe/", "_blank")} className='cursor-pointer'>
                             Learn More
                           </button>
                         </div>
@@ -384,7 +411,118 @@ function MainPage() {
                 </div>
               </section>
 
+              {/* Contact */}
+
+              <section className="bg-[linear-gradient(to_bottom,_black_0%,_black_75%,_black_100%)]" id="contact">
+      <div className="max-w-5xl mx-auto text-center px-8">
+        <h2 className='bg-gradient-to-r from-[#5667f6] to-[#c952ff] bg-clip-text text-transparent font-semibold text-4xl text-center mb-8 pt-20'>
+          Contact Me
+        </h2>
+        <p className="mb-12 text-sm md:text-base text-gray-300 max-w-xl mx-auto">
+          'The best way to predict the future is to invent it' - Alan Kay
+        </p>
+
+        <form className="space-y-6">
+          <input
+            type="text"
+            placeholder="Name"
+            className="w-full bg-transparent border border-[#5667f6] px-4 py-3 r focus:outline-none placeholder-[#7634aa]"
+          />
+
+          <div className="flex flex-col md:flex-row gap-4">
+            <input
+              type="email"
+              placeholder="Email"
+              className="flex-1 bg-transparent border border-[#5667f6] px-4 py-3  focus:outline-none focus:ring- placeholder-[#7634aa]"
+            />
+            <input
+              type="text"
+              placeholder="Subject"
+              className="flex-1 bg-transparent border border-[#5667f6] px-4 py-3  focus:outline-none placeholder-[#7634aa]"
+            />
+          </div>
+
+          <textarea
+            rows="6"
+            placeholder="Your Message"
+            className="w-full bg-transparent border border-[#5667f6] px-4 py-3 focus:outline-none placeholder-[#7634aa]"
+          ></textarea>
+
+          <button
+            type="submit"
+            className='w-fit mx-auto my-10 bg-gradient-to-r from-[#5667f6] to-[#7634aa] text-white border border-white py-2 px-4 rounded-lg text-lg transition-transform duration-300 transform hover:scale-110 border-none cursor-pointer'
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
               {/* socials */}
+
+              <section className='bg-[linear-gradient(to_bottom,_black_0%,_black_75%,_black_100%)]'>
+                <div className='flex justify-center gap-8 '>
+                    <div className='cursor-pointer'>
+                      <a href="https://x.com/Tariqq_gunner"
+                      target="_blank"
+                      rel="noopener noreferrer">
+
+                        <FaXTwitter className='w-6 h-6' />
+                      </a>
+                    </div>
+
+                    <div className='cursor-pointer'>
+                      <a href="https://www.instagram.com/riqque_1/"
+                      target="_blank"
+                      rel="noopener noreferrer">
+
+                        <FaInstagram className='w-6 h-6' />
+                      </a>
+                    </div>
+
+                    <div className='cursor-pointer'>
+                        <a href="https://x.com/Tariqq_gunner"
+                      target="_blank"
+                      rel="noopener noreferrer">
+
+                        <FaGithub className='w-6 h-6' />
+                      </a>
+                    </div>
+
+                    <div className='cursor-pointer'>
+                        <a href="https://www.linkedin.com/in/kojo-amfo-baah-206191228/"
+                      target="_blank"
+                      rel="noopener noreferrer">
+
+                        <FaLinkedinIn className='w-6 h-6' />
+                      </a>
+                    </div>
+
+                    <div className='cursor-pointer'>
+                        <a href="https://www.youtube.com/@pidginplaybook"
+                      target="_blank"
+                      rel="noopener noreferrer">
+
+                        <FaYoutube className='w-6 h-6' />
+                      </a>
+                    </div>
+
+                    <div className='cursor-pointer'>
+                        <a href="https://wa.me/233504614340"
+                      target="_blank"
+                      rel="noopener noreferrer">
+
+                        <FaWhatsapp className='w-6 h-6' />
+                      </a>
+                    </div>  
+                </div>
+
+                <div className='flex justify-center py-4'>
+                  <p>
+                        &copy; {new Date().getFullYear()} Kojo Amfo-Baah. All rights reserved.
+                      </p>
+                </div>
+              </section>
         
       </div>
     </div>

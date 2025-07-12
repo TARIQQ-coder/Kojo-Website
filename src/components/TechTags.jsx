@@ -54,7 +54,7 @@ const TechTags = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="max-w-6xl mx-auto p-6 pt-20">
       <h1 className="font-bold text-center mb-6 bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent text-3xl">
         Skills
       </h1>
