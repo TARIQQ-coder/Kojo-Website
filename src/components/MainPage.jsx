@@ -16,6 +16,35 @@ function MainPage() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
+   const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+  event.preventDefault();
+  setResult("Sending...");
+  const formData = new FormData(event.target);
+
+  formData.append("access_key", "81c27958-9471-4f8d-88b7-5ad003dfa944");
+
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData,
+  });
+
+  const data = await response.json();
+
+  if (data.success) {
+    setResult("Form Submitted Successfully");
+    window.alert("✅ Your message has been sent!");
+    event.target.reset();
+  } else {
+    console.log("Error", data);
+    window.alert("❌ Something went wrong. Please try again.");
+    setResult(data.message);
+  }
+};
+
+
+
 
   return (
     <div className="min-h-screen text-white font-mono scroll-smooth">
@@ -30,7 +59,7 @@ function MainPage() {
             Hey, I am{' '}
             <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent inline-block">
               <Typewriter
-                words={['Web Developer', 'Frontend Engineer', 'React Enthusiast']}
+                words={['Kojo Amfo-Baah','Web Developer', 'Frontend Engineer', 'React Enthusiast']}
                 loop={true}
                 cursor
                 cursorStyle="|"
@@ -422,9 +451,10 @@ function MainPage() {
           'The best way to predict the future is to invent it' - Alan Kay
         </p>
 
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={onSubmit}>
           <input
             type="text"
+            name="name"
             placeholder="Name"
             className="w-full bg-transparent border border-[#5667f6] px-4 py-3 r focus:outline-none placeholder-[#7634aa]"
           />
@@ -432,6 +462,7 @@ function MainPage() {
           <div className="flex flex-col md:flex-row gap-4">
             <input
               type="email"
+              name="email"
               placeholder="Email"
               className="flex-1 bg-transparent border border-[#5667f6] px-4 py-3  focus:outline-none focus:ring- placeholder-[#7634aa]"
             />
@@ -444,6 +475,7 @@ function MainPage() {
 
           <textarea
             rows="6"
+            name="message"
             placeholder="Your Message"
             className="w-full bg-transparent border border-[#5667f6] px-4 py-3 focus:outline-none placeholder-[#7634aa]"
           ></textarea>
@@ -455,6 +487,9 @@ function MainPage() {
             Send Message
           </button>
         </form>
+
+        
+
       </div>
     </section>
 
