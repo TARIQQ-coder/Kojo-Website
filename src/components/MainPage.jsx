@@ -2,14 +2,15 @@ import React from 'react';
 import { useState } from 'react';
 import Image1 from '../assets/ProfileImage.jpeg'
 import Image2 from '../assets/ProfileImage2.jpg'
-import { VscVscode } from "react-icons/vsc";
 import TechTags from './TechTags';
 import { FaEye, FaPlay,FaYoutube,FaInstagram,FaGithub,FaLinkedinIn,FaWhatsapp } from 'react-icons/fa';
 import { CiYoutube } from "react-icons/ci";
 import { FaXTwitter } from "react-icons/fa6";
 import ProjectModal from './ProjectModal';
 import projectData from '../data/projectData';
+import Tools from '../data/ToolsData'
 import { Typewriter } from 'react-simple-typewriter';
+
 
 function MainPage() {
 
@@ -225,7 +226,7 @@ function MainPage() {
 
               {/* Section 4 - Tools and skills */}
 
-              {/* Tools */}
+              
         <section className='bg-[linear-gradient(to_bottom,_#04032b_0%,_#04032b_95%,_#04032b_100%)] '>
 
           <div className='mb-10'>
@@ -236,44 +237,16 @@ function MainPage() {
                 </p>
           </div>
 
-          <div className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-18 md:px-26'>
-              <div className='bg-[#38334e]/40 w-[250px] h-[140px] rounded-md mx-auto py-6 flex flex-col items-center gap-2'>
-                  <div>
-                    <VscVscode className='w-16 h-14 text-[#9352ff]'/>
-                  </div>
-                    <p className='text-[#d2cce9] text-lg'>Visual Studio Code</p>
-              </div>
-
-              <div className='bg-[#38334e]/40 w-[250px] h-[140px] rounded-md mx-auto py-6 flex flex-col items-center gap-2'>
-                  <div>
-                    <VscVscode className='w-16 h-14 text-[#9352ff]'/>
-                  </div>
-                    <p className='text-[#d2cce9] text-lg'>Visual Studio Code</p>
-              </div>
-
-              <div className='bg-[#38334e]/40 w-[250px] h-[140px] rounded-md mx-auto py-6 flex flex-col items-center gap-2'>
-                  <div>
-                    <VscVscode className='w-16 h-14 text-[#9352ff]'/>
-                  </div>
-                    <p className='text-[#d2cce9] text-lg'>Visual Studio Code</p>
-              </div>
-
-              <div className='bg-[#38334e]/40 w-[250px] h-[140px] rounded-md mx-auto py-6 flex flex-col items-center gap-2'>
-                  <div>
-                    <VscVscode className='w-16 h-14 text-[#9352ff]'/>
-                  </div>
-                    <p className='text-[#d2cce9] text-lg'>Visual Studio Code</p>
-              </div>
-
-              <div className='bg-[#38334e]/40 w-[250px] h-[140px] rounded-md mx-auto py-6 flex flex-col items-center gap-2 mr-5 md:mr-15'>
-                  <div>
-                    <VscVscode className='w-16 h-14 text-[#9352ff]'/>
-                  </div>
-                    <p className='text-[#d2cce9] text-lg'>Visual Studio Code</p>
-              </div>
-
-              
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-25 md:px-33'>
+        {Tools.map((tool, index) => (
+          <div key={index} className='bg-[#38334e]/40 w-[250px] h-[140px] rounded-md mx-auto py-6 flex flex-col items-center gap-2'>
+          <div>
+            <tool.icon className='w-16 h-14 text-[#9352ff]' />
           </div>
+          <p className='text-[#d2cce9] text-lg'>{tool.name}</p>
+        </div>
+        ))}
+      </div>
         </section>
 
         {/* Skills */}
