@@ -17,7 +17,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import ProjectModal from "./ProjectModal";
 import projectData from "../data/projectData";
 import education from "../data/EducationData";
-import experience from "../data/experienceData";
+import experience from "../data/ExperienceData";
 import Tools from "../data/ToolsData";
 import { Typewriter } from "react-simple-typewriter";
 import Counter from "./Counter";
