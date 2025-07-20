@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Image1 from "../assets/ProfileImage.jpeg";
-import Image2 from "../assets/ProfileImage2.jpg";
+import Image2 from "../assets/ProfileImage2.JPG";
 import TechTags from "./TechTags";
 import {
   FaEye,
