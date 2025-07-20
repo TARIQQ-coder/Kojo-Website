@@ -20,6 +20,7 @@ import education from "../data/EducationData";
 import experience from "../data/experienceData";
 import Tools from "../data/ToolsData";
 import { Typewriter } from "react-simple-typewriter";
+import Counter from "./Counter";
 
 function MainPage() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -367,30 +368,30 @@ function MainPage() {
           <div className="relative bg-white/10 backdrop-blur-md   p-6 shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-6">
               <div className="text-center mb-8">
-                <span className="text-4xl font-semibold">75</span>
+                <span className="text-4xl font-semibold"><Counter end={47}/></span>
                 <p className="bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent text-xl font-semibold">
                   Successful Projects
                 </p>
               </div>
 
               <div className="text-center mb-8">
-                <span className="text-4xl font-semibold">75</span>
+                <span className="text-4xl font-semibold"><Counter end={8}/></span>
                 <p className="bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent text-xl font-semibold">
-                  Successful Projects
+                  Happy Clients
                 </p>
               </div>
 
               <div className="text-center mb-8">
-                <span className="text-4xl font-semibold">75</span>
+                <span className="text-4xl font-semibold"><Counter end={15}/></span>
                 <p className="bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent text-xl font-semibold">
-                  Successful Projects
+                  Awards Received
                 </p>
               </div>
 
               <div className="text-center mb-8">
-                <span className="text-4xl font-semibold">75</span>
+                <span className="text-4xl font-semibold"><Counter end={8}/></span>
                 <p className="bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent text-xl font-semibold">
-                  Successful Projects
+                  Customers
                 </p>
               </div>
             </div>

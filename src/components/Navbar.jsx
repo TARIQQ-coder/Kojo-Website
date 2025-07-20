@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="bg-[#010634] text-white py-2 border-b border-[#2E2E62] fixed top-0 w-full z-40">
       <div className="container mx-auto flex justify-between items-center px-4 py-2">
-        <div className="text-xl font-bold">RIQ</div>
+        <div className="text-xl font-bold">KOJO AMFO-BAAH</div>
         <div className="md:flex hidden space-x-16 text-lg font-light">
           <a
             href="#home"
