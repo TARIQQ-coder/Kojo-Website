@@ -29,7 +29,7 @@ const projectData = [
     description:
       'SushiBloom is a vibrant sushi restaurant website that brings the elegance and flavor of Japanese cuisine to your screen. With a beautifully designed menu, easy online ordering, and stunning visuals, SushiBloom offers a seamless way to explore handcrafted rolls, sashimi, and seasonal specialties.',
     tech: ['Vite', 'React', 'TypeScript', 'TailwindCSS', 'Zustand'],
-    demoLink: 'https://male-fashion-shop.netlify.app/', 
+    demoLink: 'https://sushibloom.netlify.app/', 
   },
   {
     image: TodoList,
