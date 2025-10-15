@@ -143,10 +143,7 @@ function MainPage() {
               <div>
                 <div className="w-[80%] mb-12 mx-auto">
                   <p className="text-center text-xl mb-4 font-light">
-                    I am a professional with a degree in computer science, with
-                    more than two years of experience, including 1 year of
-                    experience working as a software developer and 2 years as a
-                    freelancer.
+                    I am a professional with a certificate in Software Engineering and two years of hands-on experience — including one year of software development training at Codetrain Africa, a software engineering institute, and one year working as a freelancer.
                   </p>
 
                   <div className=" flex justify-center">

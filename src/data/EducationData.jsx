@@ -1,18 +1,18 @@
 const education = [
   {
-    date: 'November 14, 2023',
-    title: 'UI Design Training',
+    date: 'November 21, 2021',
+    title: 'BA. Economics and Statistics',
+    organization: 'University of Ghana',
+  },
+  {
+    date: 'August 02, 2024',
+    title: 'Artificial Intelligence and Prompt Engineering',
     organization: 'Prodigee',
   },
   {
-    date: 'October 10, 2022',
-    title: 'Web Development Bootcamp',
-    organization: 'CodeCamp',
-  },
-  {
-    date: 'August 5, 2021',
-    title: 'Bachelor of Computer Science',
-    organization: 'Tech University',
+    date: 'In progress',
+    title: 'Software Engineering Certificate',
+    organization: 'Codetrain Africa',
   },
 ];
 

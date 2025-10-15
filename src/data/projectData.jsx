@@ -4,6 +4,8 @@ import SushiBloom from '../assets/SushiBloom.png'
 import TodoList from '../assets/TodoList.png'
 import ShoppingMart from '../assets/ShoppingMart.png'
 import DigitalClock from '../assets/DigitalClock.png'
+import Expensio from '../assets/Expensio.png'
+import SMP from '../assets/SMP.png'
 
 
 const projectData = [
@@ -11,8 +13,8 @@ const projectData = [
     image: MaleFashionPP,
     title: 'Male fashion Website',
     description:
-      'This is a Kanban-based task management system, developed with React, TypeScript, and TailwindCSS. The project offers an intuitive interface to organize tasks in three states: To Do, In Progress, and Completed.',
-    tech: ['Vite', 'React', 'TypeScript', 'TailwindCSS', 'Zustand'],
+      'A modern male fashion e-commerce website designed with React, Zustand, and TailwindCSS. It features a sleek UI for browsing clothing collections, viewing product details, and exploring stylish outfits tailored for men.',
+    tech: ['Vite', 'React', 'TailwindCSS', 'Zustand'],
     demoLink: 'https://male-fashion-shop.netlify.app/', 
   },
   {
@@ -20,7 +22,7 @@ const projectData = [
     title: 'JobFind Website',
     description:
       'JobFind is a modern job-seeking website designed to bridge the gap between job seekers and employers. With an intuitive interface and smart filtering tools, JobFind allows users to discover opportunities tailored to their skills, interests, and career goals.',
-    tech: ['Vite', 'React', 'TypeScript', 'TailwindCSS', 'Zustand'],
+    tech: ['Vite', 'React', 'TailwindCSS', 'Zustand'],
     demoLink: 'https://jobfind-website.netlify.app/', 
   },
   {
@@ -28,17 +30,18 @@ const projectData = [
     title: 'SushiBloom restaurant Website',
     description:
       'SushiBloom is a vibrant sushi restaurant website that brings the elegance and flavor of Japanese cuisine to your screen. With a beautifully designed menu, easy online ordering, and stunning visuals, SushiBloom offers a seamless way to explore handcrafted rolls, sashimi, and seasonal specialties.',
-    tech: ['Vite', 'React', 'TypeScript', 'TailwindCSS', 'Zustand'],
+    tech: ['Vite', 'React', 'TailwindCSS', 'Zustand'],
     demoLink: 'https://sushibloom.netlify.app/', 
   },
   {
-    image: TodoList,
-    title: 'Todo-List application',
-    description:
-      'SushiBloom is a vibrant sushi restaurant website that brings the elegance and flavor of Japanese cuisine to your screen. With a beautifully designed menu, easy online ordering, and stunning visuals, SushiBloom offers a seamless way to explore handcrafted rolls, sashimi, and seasonal specialties. Whether dining in or ordering out, SushiBloom makes every sushi experience fresh, delightful, and unforgettable.',
-    tech: ['Vite', 'React', 'TypeScript', 'TailwindCSS', 'Zustand'],
-    demoLink: 'https://todolist-webz.netlify.app/', 
-  },
+  image: Expensio,
+  title: 'Expensio - Expense Tracker',
+  description:
+    'Expensio is a user-friendly expense tracking application designed to help individuals manage their finances with ease. Built with React, Vite, TailwindCSS, and Zustand, the app allows users to record, categorize, and monitor their daily expenses. Firebase powers the backend, enabling secure data storage and real-time updates for a seamless user experience.',
+  tech: ['Vite', 'React', 'TailwindCSS', 'Zustand', 'Firebase'],
+  demoLink: 'https://expensio-app.netlify.app/',
+}
+,
   {
     image: ShoppingMart,
     title: 'Shopping Mart Website',
@@ -48,13 +51,13 @@ const projectData = [
     demoLink: 'https://shopping-webz.netlify.app/', 
   },
   {
-    image: DigitalClock,
-    title: 'Digital Clock Project',
-    description:
-      'Digital Clock is a sleek and functional web-based clock that displays the current time in real-time. Built for simplicity and clarity, it updates automatically and adapts to your device, making it perfect for desktops or mobile. Ideal for learning time-based functions in web development.',
-    tech: ['Vite', 'React', 'TypeScript', 'TailwindCSS', 'Zustand'],
-    demoLink: 'https://digitalclock-projectz.netlify.app/', 
-  }
+  image: SMP,
+  title: 'Student Management System',
+  description:
+    'A comprehensive student management application designed to streamline academic administration. Built with React, Vite, TailwindCSS, and Zustand, the platform allows users to manage student records, track performance, and view class details efficiently. The interface is intuitive, responsive, and optimized for both administrators and educators.',
+  tech: ['Vite', 'React', 'TailwindCSS', 'Zustand'],
+  demoLink: 'https://student-management-proj.netlify.app/',
+}
 ]
 
 export default projectData
