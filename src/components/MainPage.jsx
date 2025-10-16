@@ -372,21 +372,21 @@ function MainPage() {
               </div>
 
               <div className="text-center mb-8">
-                <span className="text-4xl font-semibold"><Counter end={8}/></span>
+                <span className="text-4xl font-semibold"><Counter end={3}/></span>
                 <p className="bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent text-xl font-semibold">
                   Happy Clients
                 </p>
               </div>
 
               <div className="text-center mb-8">
-                <span className="text-4xl font-semibold"><Counter end={15}/></span>
+                <span className="text-4xl font-semibold"><Counter end={2}/></span>
                 <p className="bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent text-xl font-semibold">
                   Awards Received
                 </p>
               </div>
 
               <div className="text-center mb-8">
-                <span className="text-4xl font-semibold"><Counter end={8}/></span>
+                <span className="text-4xl font-semibold"><Counter end={3}/></span>
                 <p className="bg-gradient-to-r from-[#5667f6] to-[#7634aa] bg-clip-text text-transparent text-xl font-semibold">
                   Customers
                 </p>
