@@ -155,7 +155,7 @@ function MainPage() {
                         Portfolio
                       </button>
                     </a>
-                    <a href="/Nilla's Playground proposal.pdf" download>
+                    <a href="/KOJO_AMFO_BAAH_CV.pdf" download>
                       <button
                         className="py-2 px-4 bg-white/20 hover:bg-white/40 rounded-lg mt-6 
                       transition-all duration-300 transform hover:-translate-y-2 ml-2 "
@@ -168,7 +168,7 @@ function MainPage() {
 
                 <div className="flex justify-around text-center">
                   <div className="text-xl flex flex-col ">
-                    <span>3 years</span>
+                    <span>2 years</span>
                     <span className="bg-gradient-to-r from-[#5667f6] to-[#c952ff] bg-clip-text text-transparent font-semibold">
                       Experience
                     </span>
